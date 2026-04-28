@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodDash | Order Food & Groceries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .orange-gradient { background: linear-gradient(135deg, #fc8019 0%, #ff6d00 100%); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Smooth transitions for hover effects */
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-10">
+                <h1 class="text-3xl font-black text-[#fc8019] tracking-tighter cursor-pointer">FOODDASH</h1>
+                <div class="hidden md:flex items-center text-sm font-bold text-gray-600 hover:text-[#fc8019] cursor-pointer group">
+                    <span class="border-b-2 border-black group-hover:border-[#fc8019] mr-2">Set Location</span> 
+                    <i class="fa-solid fa-chevron-down text-[#fc8019] text-xs"></i>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-10 font-bold text-gray-700">
+                <div class="flex items-center gap-2 hover:text-[#fc8019] cursor-pointer"><i class="fa-solid fa-magnifying-glass"></i> Search</div>
+                <div class="flex items-center gap-2 hover:text-[#fc8019] cursor-pointer"><i class="fa-solid fa-percent"></i> Offers</div>
+                <div class="flex items-center gap-2 hover:text-[#fc8019] cursor-pointer"><i class="fa-solid fa-user"></i> Sign In</div>
+                <div class="flex items-center gap-2 hover:text-[#fc8019] cursor-pointer relative">
+                    <i class="fa-solid fa-cart-shopping"></i> Cart
+                    <span class="absolute -top-2 -right-3 bg-orange-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="orange-gradient py-20 px-6">
+        <div class="max-w-4xl mx-auto text-white text-center">
+            <h2 class="text-5xl font-black mb-10 leading-tight">Hungry? You're in the right place.</h2>
+            <div class="flex flex-col md:flex-row gap-0 bg-white p-2 rounded-xl shadow-2xl overflow-hidden">
+                <div class="flex-1 flex items-center px-5 py-3 border-r border-gray-100">
+                    <i class="fa-solid fa-location-crosshairs text-[#fc8019] mr-3"></i>
+                    <input type="text" placeholder="Enter delivery location" class="w-full outline-none text-gray-800 font-medium">
+                </div>
+                <div class="flex-[1.5] flex items-center px-5 py-3">
+                    <input type="text" placeholder="Search for 'Biryani' or 'Pizza Hut'..." class="w-full outline-none text-gray-800 font-medium">
+                    <button class="bg-[#fc8019] text-white px-6 py-2 rounded-lg font-bold hover:bg-orange-600 transition-colors">FIND FOOD</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-12 pb-20">
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white rounded-3xl p-8 shadow-xl flex justify-between items-center card-hover cursor-pointer border border-gray-50">
+                <div class="space-y-2">
+                    <div class="bg-orange-100 text-[#fc8019] text-[10px] font-black px-2 py-1 rounded w-fit">POPULAR</div>
+                    <h3 class="text-3xl font-black">FOOD DELIVERY</h3>
+                    <p class="text-gray-400 font-bold text-xs tracking-widest">FROM TOP RESTAURANTS</p>
+                    <p class="text-[#fc8019] font-bold pt-4 flex items-center gap-2">UPTO 60% OFF <i class="fa-solid fa-circle-arrow-right"></i></p>
+                </div>
+                <img src="OIP (1).jpg" alt="Food" class="w-32 drop-shadow-2xl">
+            </div>
+            <div class="bg-white rounded-3xl p-8 shadow-xl flex justify-between items-center card-hover cursor-pointer border border-gray-50">
+                <div class="space-y-2">
+                    <div class="bg-green-100 text-green-600 text-[10px] font-black px-2 py-1 rounded w-fit">INSTANT</div>
+                    <h3 class="text-3xl font-black">INSTAMART</h3>
+                    <p class="text-gray-400 font-bold text-xs tracking-widest">GROCERIES IN MINUTES</p>
+                    <p class="text-[#fc8019] font-bold pt-4 flex items-center gap-2">FRESH DEALS <i class="fa-solid fa-circle-arrow-right"></i></p>
+                </div>
+                <img src="shopping basket.png" alt="Grocery" class="w-32 drop-shadow-2xl">
+            </div>
+        </div>
+
+        <div class="mb-20">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-black tracking-tight">What's on your mind?</h2>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"><i class="fa-solid fa-arrow-left text-sm"></i></button>
+                    <button class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"><i class="fa-solid fa-arrow-right text-sm"></i></button>
+                </div>
+            </div>
+            <div class="flex overflow-x-auto gap-12 hide-scrollbar pb-6">
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="piza.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Pizza</p>
+                </div>
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="biriyani.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Biryani</p>
+                </div>
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="noodles.png" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Chinese</p>
+                </div>
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="cake.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Desserts</p>
+                </div>
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="chicken roll.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Rolls</p>
+                </div>
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="ice cream.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Ice Cream</p>
+                </div>
+                <div class="min-w-[120px] text-center cursor-pointer group">
+                    <div class="w-24 h-24 mx-auto mb-3 overflow-hidden rounded-full transition-transform group-hover:scale-105">
+                        <img src="Unconfirmed 711113.crdownload" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-gray-700 group-hover:text-black">Coffee</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-black mb-8 tracking-tight">Top Rated Restaurants</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card-hover cursor-pointer group">
+                <div class="relative rounded-2xl overflow-hidden mb-3 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white font-black text-lg">ITEMS AT ₹129</p>
+                    </div>
+                </div>
+                <h4 class="font-black text-lg">Pizza Castle</h4>
+                <div class="flex items-center gap-1 font-bold text-sm mb-1">
+                    <i class="fa-solid fa-circle-check text-green-600"></i>
+                    <span>4.3 • 25-30 mins</span>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">Pizzas, Italian, Beverages</p>
+                <p class="text-gray-500 text-sm font-medium">New Delhi • 2.4 km</p>
+            </div>
+
+            <div class="card-hover cursor-pointer group">
+                <div class="relative rounded-2xl overflow-hidden mb-3 aspect-video">
+                    <img src="burger day.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white font-black text-lg">FLAT 20% OFF</p>
+                    </div>
+                </div>
+                <h4 class="font-black text-lg">The Burger Bay</h4>
+                <div class="flex items-center gap-1 font-bold text-sm mb-1">
+                    <i class="fa-solid fa-circle-check text-green-600"></i>
+                    <span>4.5 • 15-20 mins</span>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">Burgers, American, Shakes</p>
+                <p class="text-gray-500 text-sm font-medium">Connaught Place • 1.1 km</p>
+            </div>
+            <div class="card-hover cursor-pointer group">
+                <div class="relative rounded-2xl overflow-hidden mb-3 aspect-video">
+                    <img src="shakes.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white font-black text-lg">FLAT 20% OFF</p>
+                    </div>
+                </div>
+                <h4 class="font-black text-lg">Baskin Robbins Happyness Shakes</h4>
+                <div class="flex items-center gap-1 font-bold text-sm mb-1">
+                    <i class="fa-solid fa-circle-check text-green-600"></i>
+                    <span>4.5 • 15-20 mins</span>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">A Sweeet treat like never before!</p>
+                <p class="text-gray-500 text-sm font-medium">Kollkata • 1.5 km</p>
+            </div>
+             <div class="card-hover cursor-pointer group">
+                <div class="relative rounded-2xl overflow-hidden mb-3 aspect-video">
+                    <img src="desert.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white font-black text-lg">FLAT 30% OFF</p>
+                    </div>
+                </div>
+                <h4 class="font-black text-lg">The Cake Shop</h4>
+                <div class="flex items-center gap-1 font-bold text-sm mb-1">
+                    <i class="fa-solid fa-circle-check text-green-600"></i>
+                    <span>4.5 • 15-20 mins</span>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">rich,moist and sponge layers made with love and sweetness!</p>
+                <p class="text-gray-500 text-sm font-medium">Mumbai  • 1.4 km</p>
+            </div>
+            
+            
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 py-16 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div>
+                    <h5 class="font-black mb-6 text-gray-400 text-xs tracking
